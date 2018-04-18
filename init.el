@@ -313,6 +313,9 @@ before packages are loaded. If you are unsure, you should try in setting them in
   ;; exec-path-from-shell
   (setq exec-path-from-shell-check-startup-files nil)
   (setq exec-path-from-shell-variables '("PATH" "MANPATH" "PYTHONPATH" "GOPATH"))
+
+  ;; snippets directory
+  (setq private-completion-private-snippets-directory "~/.spacemacs.d/layers/private-completion/snippets")
   
   )
 
