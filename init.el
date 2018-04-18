@@ -43,7 +43,7 @@ values."
      emacs-lisp
      git
      github
-     ;; markdown
+     (markdown :variables markdown-live-preview-engine 'vmd)
      (typography :variables typography-enable-typographic-editing t)
      (org :variables 
           org-enable-reveal-js-support t
