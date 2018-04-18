@@ -1,4 +1,4 @@
-;;; packages.el --- private-osx layer packages file for Spacemacs.
+;;; packages.el --- private-completion layer packages file for Spacemacs.
 ;;
 ;; Copyright (c) 2012-2017 Sylvain Benner & Contributors
 ;;
@@ -18,20 +18,20 @@
 ;;
 ;;
 ;; Briefly, each package to be installed or configured by this layer should be
-;; added to `private-osx-packages'. Then, for each package PACKAGE:
+;; added to `private-completion-packages'. Then, for each package PACKAGE:
 ;;
 ;; - If PACKAGE is not referenced by any other Spacemacs layer, define a
-;;   function `private-osx/init-PACKAGE' to load and initialize the package.
+;;   function `private-completion/init-PACKAGE' to load and initialize the package.
 
 ;; - Otherwise, PACKAGE is already referenced by another Spacemacs layer, so
-;;   define the functions `private-osx/pre-init-PACKAGE' and/or
-;;   `private-osx/post-init-PACKAGE' to customize the package as it is loaded.
+;;   define the functions `private-completion/pre-init-PACKAGE' and/or
+;;   `private-completion/post-init-PACKAGE' to customize the package as it is loaded.
 
 ;;; Code:
 
-(defconst private-osx-packages
+(defconst private-completion-packages
   '()
-  "The list of Lisp packages required by the private-osx layer.
+  "The list of Lisp packages required by the private-completion layer.
 
 Each entry is either:
 
