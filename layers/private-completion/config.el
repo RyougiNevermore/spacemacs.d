@@ -11,7 +11,6 @@
 
 ;;; Code:
 
-
 (defvar-local private-completion-front-end 'company
   "Which private-completion front end to use.")
 
@@ -23,21 +22,7 @@ Possible values are `complete' or `nil'.")
   "What the TAB key should do when private-completion menu is active.
 Possible values are `complete', `cycle' or `nil'.")
 
-(defvar private-completion-complete-with-key-sequence nil
-  "Provide a key sequence (string) to complete the current
-selection.")
-
-(defvar private-completion-complete-with-key-sequence-delay 0.1
-  "Timeout (seconds) when waiting for the second key of
-`private-completion-complete-with-key-sequence'.")
-
-(defvar private-completion-enable-snippets-in-popup nil
-  "If non nil show snippets in the private-completion popup.")
-
-(defvar private-completion-enable-sort-by-usage nil
-  "If non nil suggestions are sorted by how often they are used.")
-
-(defvar private-completion-enable-help-tooltip nil
+(defvar private-completion-enable-help-tooltip `manual
   "If non nil the docstring appears in a tooltip.
 If set to `manual', help tooltip appears only when invoked
 manually.")
