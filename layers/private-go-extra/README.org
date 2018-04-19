@@ -1,8 +1,5 @@
 #+TITLE: private-go-extra layer
 
-# The maximum height of the logo should be 200 pixels.
-[[img/private-go-extra.png]]
-
 # TOC links should be GitHub style anchors.
 * Table of Contents                                        :TOC_4_gh:noexport:
 - [[#description][Description]]
@@ -10,21 +7,32 @@
 - [[#key-bindings][Key bindings]]
 
 * Description
-This layer does wonderful things:
-  - thing01
+This layer does wonderful things for Go:
+  - dlv: debug for Go.
+  - impl: implement interface for Go.
+  - tag: add or remove struct tag.
+  - direx: go direx.
+  - test gen: gen go test file.
 
 * Install
 To use this configuration layer, add it to your =~/.spacemacs=. You will need to
 add =private-go-extra= to the existing =dotspacemacs-configuration-layers= list in this
 file.
 
+#+BEGIN_SRC sh
+  go get -u github.com/derekparker/delve/cmd/dlv
+  go get -u github.com/josharian/impl
+  go get -u github.com/cweill/gotests/...
+  go get -u github.com/fatih/gomodifytags
+#+END_SRC
+
 * Key bindings
 
 | Key Binding | Description    |
 |-------------+----------------|
-| ~SPC x x x~ | Does thing01   |
-# Use GitHub URLs if you wish to link a Spacemacs documentation file or its heading.
-# Examples:
-# [[https://github.com/syl20bnr/spacemacs/blob/master/doc/VIMUSERS.org#sessions]]
-# [[https://github.com/syl20bnr/spacemacs/blob/master/layers/%2Bfun/emoji/README.org][Link to Emoji layer README.org]]
-# If space-doc-mode is enabled, Spacemacs will open a local copy of the linked file.
+| ~SPC m D f~ | go debug       |
+| ~SPC m I i~ | go Implement   |
+| ~SPC m T a~ | go tag add     |
+| ~SPC m T d~ | go tag remove  |
+| ~SPC m d b~ | go direx       |
+| ~SPC m t g~ | go gen test    |
