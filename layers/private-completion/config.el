@@ -15,28 +15,20 @@
   "Which private-completion front end to use.")
 
 (defvar private-completion-return-key-behavior 'complete
-  "What the RET key should do when private-completion menu is active.
-Possible values are `complete' or `nil'.")
+  "What the RET key should do when private-completion menu is active. Possible values are `complete' or `nil'.")
 
 (defvar private-completion-tab-key-behavior 'cycle
-  "What the TAB key should do when private-completion menu is active.
-Possible values are `complete', `cycle' or `nil'.")
+  "What the TAB key should do when private-completion menu is active. Possible values are `complete', `cycle' or `nil'.")
 
-(defvar private-completion-enable-help-tooltip `manual
-  "If non nil the docstring appears in a tooltip.
-If set to `manual', help tooltip appears only when invoked
-manually.")
-
-(defvar company-mode-completion-cancel-keywords
-  '("do"
-    "then"
-    "begin"
-    "case")
-  "Keywords on which to cancel completion so that you can use RET
-to complet without blocking common line endings.")
+(defvar private-completion-enable-help-tooltip nil 
+  "If non nil the docstring appears in a tooltip. 
+  If set to `manual', help tooltip appears only when invoked 
+  manually.")
 
 (defvar private-completion-private-snippets-directory nil
   "Configurable private snippets directory.")
 
-(defvar private-completion-company-enable-yas t 
-    "Enable yasnippet for all backends.")
+(defvar private-completion-company-enable-yas t "Enable yasnippet for all backends.")
+
+(defvar auto-completion-enable-snippets-in-popup nil
+  "If non nil show snippets in the auto-completion popup.")

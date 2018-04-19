@@ -38,20 +38,17 @@ values."
      ;; ----------------------------------------------------------------
      helm
      ;; auto-completion
-     (auto-completion :variables
-                   auto-completion-return-key-behavior 'complete
-                   auto-completion-tab-key-behavior 'cycle
-                   auto-completion-complete-with-key-sequence nil
-                   auto-completion-complete-with-key-sequence-delay 0.1
-                   auto-completion-enable-help-tooltip t
-                   auto-completion-enable-sort-by-usage t
-                   auto-completion-enable-snippets-in-popup t
-                   auto-completion-private-snippets-directory "~/.spacemacs.d/snippets")
+     (private-completion :variables
+                   private-completion-return-key-behavior 'complete
+                   private-completion-tab-key-behavior 'cycle
+                   private-completion-enable-help-tooltip t 
+                   private-completion-company-enable-yas t
+                   private-completion-private-snippets-directory "~/.spacemacs.d/snippets")
      better-defaults
      (ibuffer :variables ibuffer-group-buffers-by 'projects)
-     (spell-checking :variables 
-                      spell-checking-enable-auto-dictionary t
-                      enable-flyspell-auto-completion t)
+     ;;(spell-checking :variables 
+     ;;                 spell-checking-enable-auto-dictionary nil
+     ;;                 enable-flyspell-auto-completion nil)
      (syntax-checking :variables 
                       syntax-checking-enable-tooltips t
                       syntax-checking-enable-by-default t
@@ -89,7 +86,6 @@ values."
      (go :variables 
          gofmt-command "goimports"
          go-tab-width 8)
-     ;; private-completion
      private-go-extra
     )
    ;; List of additional packages that will be installed without being
@@ -354,7 +350,7 @@ before packages are loaded. If you are unsure, you should try in setting them in
   (setq exec-path-from-shell-variables '("PATH" "MANPATH" "PYTHONPATH" "GOPATH"))
 
   ;; snippets directory
-  (setq private-completion-private-snippets-directory "~/.spacemacs.d/layers/private-completion/snippets")
+  ;;(setq private-completion-private-snippets-directory "~/.spacemacs.d/layers/private-completion/snippets")
   
   )
 
