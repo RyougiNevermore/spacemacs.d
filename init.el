@@ -38,6 +38,15 @@ values."
      ;; ----------------------------------------------------------------
      helm
      ;; auto-completion
+     (auto-completion :variables
+                   auto-completion-return-key-behavior 'complete
+                   auto-completion-tab-key-behavior 'cycle
+                   auto-completion-complete-with-key-sequence nil
+                   auto-completion-complete-with-key-sequence-delay 0.1
+                   auto-completion-enable-help-tooltip t
+                   auto-completion-enable-sort-by-usage t
+                   auto-completion-enable-snippets-in-popup t
+                   auto-completion-private-snippets-directory "~/.spacemacs.d/snippets")
      better-defaults
      (ibuffer :variables ibuffer-group-buffers-by 'projects)
      (spell-checking :variables 
@@ -80,7 +89,7 @@ values."
      (go :variables 
          gofmt-command "goimports"
          go-tab-width 8)
-     private-completion
+     ;; private-completion
      private-go-extra
     )
    ;; List of additional packages that will be installed without being
@@ -376,7 +385,7 @@ you should place your code here."
    ["#0a0814" "#f2241f" "#67b11d" "#b1951d" "#4f97d7" "#a31db1" "#28def0" "#b2b2b2"])
  '(package-selected-packages
    (quote
-    (go-tag go-impl go-gen-test go-dlv go-direx direx tide typescript-mode sql-indent graphviz-dot-mode yaml-mode go-guru go-eldoc company-go go-mode xterm-color shell-pop multi-term eshell-z eshell-prompt-extras esh-help imenu-list floobits flyspell-popup flyspell-correct-helm flyspell-correct flycheck-pos-tip flycheck auto-dictionary emoji-cheat-sheet-plus company-emoji vmd-mode typo ibuffer-projectile magit-gh-pulls github-search github-clone github-browse-file gist gh marshal logito pcache ht ox-reveal smeargle orgit org-projectile org-category-capture org-present org-pomodoro alert log4e gntp org-mime org-download mmm-mode markdown-toc markdown-mode magit-gitflow htmlize helm-gitignore gnuplot gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gh-md evil-magit magit magit-popup git-commit ghub let-alist with-editor company-quickhelp pos-tip yasnippet helm-company fuzzy company unfill mwim dracula-theme ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint indent-guide hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu elisp-slime-nav dumb-jump diminish define-word column-enforce-mode clean-aindent-mode auto-highlight-symbol auto-compile aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line))))
+    (helm-c-yasnippet company-statistics auto-yasnippet ac-ispell auto-complete go-tag go-impl go-gen-test go-dlv go-direx direx tide typescript-mode sql-indent graphviz-dot-mode yaml-mode go-guru go-eldoc company-go go-mode xterm-color shell-pop multi-term eshell-z eshell-prompt-extras esh-help imenu-list floobits flyspell-popup flyspell-correct-helm flyspell-correct flycheck-pos-tip flycheck auto-dictionary emoji-cheat-sheet-plus company-emoji vmd-mode typo ibuffer-projectile magit-gh-pulls github-search github-clone github-browse-file gist gh marshal logito pcache ht ox-reveal smeargle orgit org-projectile org-category-capture org-present org-pomodoro alert log4e gntp org-mime org-download mmm-mode markdown-toc markdown-mode magit-gitflow htmlize helm-gitignore gnuplot gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gh-md evil-magit magit magit-popup git-commit ghub let-alist with-editor company-quickhelp pos-tip yasnippet helm-company fuzzy company unfill mwim dracula-theme ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint indent-guide hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu elisp-slime-nav dumb-jump diminish define-word column-enforce-mode clean-aindent-mode auto-highlight-symbol auto-compile aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
