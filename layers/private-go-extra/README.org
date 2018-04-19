@@ -1,0 +1,38 @@
+#+TITLE: private-go-extra layer
+
+# TOC links should be GitHub style anchors.
+* Table of Contents                                        :TOC_4_gh:noexport:
+- [[#description][Description]]
+- [[#install][Install]]
+- [[#key-bindings][Key bindings]]
+
+* Description
+This layer does wonderful things for Go:
+  - dlv: debug for Go.
+  - impl: implement interface for Go.
+  - tag: add or remove struct tag.
+  - direx: go direx.
+  - test gen: gen go test file.
+
+* Install
+To use this configuration layer, add it to your =~/.spacemacs=. You will need to
+add =private-go-extra= to the existing =dotspacemacs-configuration-layers= list in this
+file.
+
+#+BEGIN_SRC sh
+  go get -u github.com/derekparker/delve/cmd/dlv
+  go get -u github.com/josharian/impl
+  go get -u github.com/cweill/gotests/...
+  go get -u github.com/fatih/gomodifytags
+#+END_SRC
+
+* Key bindings
+
+| Key Binding | Description    |
+|-------------+----------------|
+| ~SPC m D f~ | go debug       |
+| ~SPC m I i~ | go Implement   |
+| ~SPC m T a~ | go tag add     |
+| ~SPC m T d~ | go tag remove  |
+| ~SPC m d b~ | go direx       |
+| ~SPC m t g~ | go gen test    |
