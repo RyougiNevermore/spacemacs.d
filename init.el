@@ -37,56 +37,20 @@ values."
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
      helm
-     ;; auto-completion
+     better-defaults
      (private-completion :variables
                    private-completion-return-key-behavior 'complete
                    private-completion-tab-key-behavior 'cycle
                    private-completion-enable-help-tooltip t 
                    private-completion-company-enable-yas t
                    private-completion-private-snippets-directory "~/.spacemacs.d/snippets")
-     better-defaults
+
      (ibuffer :variables ibuffer-group-buffers-by 'projects)
-     ;;(spell-checking :variables 
-     ;;                 spell-checking-enable-auto-dictionary nil
-     ;;                 enable-flyspell-auto-completion nil)
-     (syntax-checking :variables 
-                      syntax-checking-enable-tooltips t
-                      syntax-checking-enable-by-default t
-                      syntax-checking-use-original-bitmaps t)
-     emacs-lisp
-     git
-     github
-     (markdown :variables markdown-live-preview-engine 'vmd)
-     (typography :variables typography-enable-typographic-editing t)
-     (org :variables 
-          org-enable-reveal-js-support t
-          org-projectile-file "TODOs.org")
-     ;; (shell :variables
-     ;;        shell-default-height 30
-     ;;        shell-default-position 'bottom)
-     ;; spell-checking
-     ;; syntax-checking
-     ;; version-control
-     ;; vim-powerline
-     emoji
-     floobits
      imenu-list
-     (shell :variables 
-            shell-default-shell 'ansi-term
-            shell-default-term-shell "/bin/zsh"
-            shell-default-position 'bottom
-            shell-default-height 40)
-     yaml
-     html
-     graphviz
-     sql
-     (typescript :variables
-                 typescript-fmt-on-save t
-                 typescript-fmt-tool 'typescript-formatter)
-     (go :variables 
-         gofmt-command "goimports"
-         go-tab-width 8)
-     private-go-extra
+     emacs-lisp
+
+
+
     )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
