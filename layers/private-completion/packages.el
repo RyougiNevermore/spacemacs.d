@@ -32,9 +32,9 @@
             company-echo-delay 0
             company-minimum-prefix-length 1
             company-tooltip-limit 12
-            company-require-match t
+            company-require-match nil
             company-dabbrev-ignore-case t
-            company-dabbrev-downcase t
+            company-dabbrev-downcase nil
       )
       (add-hook 'after-init-hook #'global-company-mode)
     )
