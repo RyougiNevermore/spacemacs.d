@@ -41,6 +41,16 @@ values."
      osx
      private-osx-extra
      (ibuffer :variables ibuffer-group-buffers-by 'projects)
+     (auto-completion :variables
+                      auto-completion-front-end 'company
+                      auto-completion-return-key-behavior 'complete
+                      auto-completion-tab-key-behavior 'cycle
+                      auto-completion-complete-with-key-sequence nil
+                      auto-completion-complete-with-key-sequence-delay 0.1
+                      auto-completion-private-snippets-directory "~/.spacemacs.d/snippets"
+                      auto-completion-enable-snippets-in-popup t
+                      auto-completion-enable-help-tooltip t)
+
 
      ;;(ibuffer :variables ibuffer-group-buffers-by 'projects)
      ;;imenu-list
