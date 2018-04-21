@@ -50,7 +50,10 @@ values."
                       auto-completion-private-snippets-directory "~/.spacemacs.d/snippets"
                       auto-completion-enable-snippets-in-popup t
                       auto-completion-enable-help-tooltip t)
-      go
+      (go :variables
+          gofmt-command "goimports"
+          go-tab-width 8)
+      private-go-extra
 
      ;;imenu-list
      ;; emacs-lisp

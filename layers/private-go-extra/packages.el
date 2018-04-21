@@ -58,6 +58,7 @@
         "Ta" 'go-tag-add
         "Tr" 'go-tag-remove
       )
+      (define-key go-mode-map (kbd "C-t") 'go-tag-add)
     )
   )
 )
