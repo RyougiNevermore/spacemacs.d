@@ -29,6 +29,3 @@
   "Configurable private snippets directory.")
 
 (defvar private-completion-company-enable-yas t "Enable yasnippet for all backends.")
-
-(defvar auto-completion-enable-snippets-in-popup nil
-  "If non nil show snippets in the auto-completion popup.")
