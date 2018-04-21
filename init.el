@@ -52,6 +52,10 @@ values."
                       auto-completion-enable-help-tooltip t)
       syntax-checking
       imenu-list
+      (shell :variables
+              shell-default-shell "/bin/zsh"
+              shell-default-height 30
+              shell-default-position 'bottom)
       emacs-lisp
       (go :variables
           gofmt-command "goimports"
