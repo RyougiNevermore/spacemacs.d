@@ -3,6 +3,6 @@
 # name: exit
 # expand-env: ((yas-indent-line 'fixed))
 # uuid: E227B994
-# contributor: Grant Rettke <gcr@wisdomandwonder.com>
+# contributor: 汪旻翔 <ryougi.nevermore@hotmail.com>
 # --
 os.Exit(${1:0})$0
