@@ -38,6 +38,7 @@ values."
      ;; ----------------------------------------------------------------
      helm
      better-defaults
+     (typography :variables typography-enable-typographic-editing t)
      osx
      private-osx-extra
      (ibuffer :variables ibuffer-group-buffers-by 'projects)
@@ -47,17 +48,15 @@ values."
                       auto-completion-tab-key-behavior 'cycle
                       auto-completion-complete-with-key-sequence nil
                       auto-completion-complete-with-key-sequence-delay 0.1
-                      auto-completion-private-snippets-directory "~/.spacemacs.d/snippets"
                       auto-completion-enable-snippets-in-popup t
                       auto-completion-enable-help-tooltip t)
       syntax-checking
+      imenu-list
+      emacs-lisp
       (go :variables
           gofmt-command "goimports"
           go-tab-width 8)
       private-go-extra
-
-     ;;imenu-list
-     ;; emacs-lisp
 
 
 
@@ -332,6 +331,9 @@ you should place your code here."
 
   (setq-default ns-use-srgb-colorspace nil)
   (setq powerline-default-separator 'arrow)
+
+  ;; snippets dir
+  (setq yas-snippet-dirs "~/.spacemacs.d/snippets")
 
   ;; org
   (setq spaceline-org-clock-p t)
