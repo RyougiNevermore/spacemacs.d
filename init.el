@@ -50,9 +50,8 @@ values."
                       auto-completion-private-snippets-directory "~/.spacemacs.d/snippets"
                       auto-completion-enable-snippets-in-popup t
                       auto-completion-enable-help-tooltip t)
+      go
 
-
-     ;;(ibuffer :variables ibuffer-group-buffers-by 'projects)
      ;;imenu-list
      ;; emacs-lisp
 
