@@ -56,6 +56,9 @@ values."
               shell-default-shell "/bin/zsh"
               shell-default-height 30
               shell-default-position 'bottom)
+      ;; vcs
+      git
+      ;; lang
       emacs-lisp
       (go :variables
           gofmt-command "goimports"
@@ -333,11 +336,15 @@ This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
 
+  ;; line
   (setq-default ns-use-srgb-colorspace nil)
   (setq powerline-default-separator 'arrow)
 
   ;; snippets dir
   (setq yas-snippet-dirs "~/.spacemacs.d/snippets")
+
+  ;; git
+  (global-git-commit-mode t)
 
   ;; org
   (setq spaceline-org-clock-p t)
