@@ -47,6 +47,9 @@
       ;; aligns annotation to the right hand side
       (setq company-tooltip-align-annotations t)
 
+      (define-key map (kbd "TAB") 'company-complete-common-or-cycle)
+      (define-key map (kbd "<tab>") 'company-complete-common-or-cycle)
+
       ;; (setq company-backends (mapcar #'private//company-backend-with-yas company-backends))
     )
   )
@@ -62,7 +65,7 @@
       (with-eval-after-load 'company
         ;;(setq company-frontends (delq 'company-echo-metadata-frontend company-frontends))
         (define-key company-active-map (kbd "M-h") #'company-quickhelp-manual-begin)
-        (unless (eq private-completion-enable-help-tooltip nil)
+        (unless (eq private-completion-enable-help-tooltip 'manual)
           (company-quickhelp-mode 1)
           (setq company-quickhelp-delay 0.5)
         )
@@ -77,7 +80,7 @@
     :defer t
     :init
     (with-eval-after-load 'company
-      (define-key company-active-map (kbd "C-/") 'helm-company)
+      (define-key company-active-map (kbd "s-/") 'helm-company)
     )
   )
 )
@@ -162,12 +165,12 @@
           )
 )
 
-(defun auto-completion/post-init-smartparens ()
+(defun private-completion/post-init-smartparens ()
   (with-eval-after-load 'smartparens
     (add-hook 'yas-before-expand-snippet-hook
-              #'spacemacs//smartparens-disable-before-expand-snippet)
+              #'private//smartparens-disable-before-expand-snippet)
     (add-hook 'yas-after-exit-snippet-hook
-              #'spacemacs//smartparens-restore-after-exit-snippet)
+              #'private//smartparens-restore-after-exit-snippet)
   )
 )
 

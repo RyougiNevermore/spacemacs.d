@@ -11,14 +11,6 @@
 
 ;;; Code:
 
-(defvar-local private-completion-front-end 'company
-  "Which private-completion front end to use.")
-
-(defvar private-completion-return-key-behavior 'complete
-  "What the RET key should do when private-completion menu is active. Possible values are `complete' or `nil'.")
-
-(defvar private-completion-tab-key-behavior 'cycle
-  "What the TAB key should do when private-completion menu is active. Possible values are `complete', `cycle' or `nil'.")
 
 (defvar private-completion-enable-help-tooltip nil 
   "If non nil the docstring appears in a tooltip. 
@@ -29,3 +21,9 @@
   "Configurable private snippets directory.")
 
 (defvar private-completion-company-enable-yas t "Enable yasnippet for all backends.")
+
+(defvar private--smartparens-enabled-initially t
+  "Stored whether smartparens is originally enabled or not.")
+
+(defvar private--yasnippet-expanding nil
+  "Whether the snippet expansion is in progress.")
