@@ -38,16 +38,13 @@ values."
      ;; ----------------------------------------------------------------
      helm
      better-defaults
-     (private-completion :variables
-                   private-completion-enable-help-tooltip t 
-                   private-completion-company-enable-yas t
-                   private-completion-private-snippets-directory "~/.spacemacs.d/snippets")
+     osx
+     private-osx-extra
      
      ;;(ibuffer :variables ibuffer-group-buffers-by 'projects)
      ;;imenu-list
      ;; emacs-lisp
-     (private-lang-go :variables
-                        go-tab-width 8)
+     
      
      
      
@@ -309,13 +306,6 @@ before packages are loaded. If you are unsure, you should try in setting them in
         ("org-cn"   . "http://elpa.emacs-china.org/org/")
         ("gnu-cn"   . "http://elpa.emacs-china.org/gnu/")))
 
-  ;; exec-path-from-shell
-  (setq exec-path-from-shell-check-startup-files nil)
-  (setq exec-path-from-shell-variables '("PATH" "MANPATH" "PYTHONPATH" "GOPATH"))
-
-  ;; snippets directory
-  ;;(setq private-completion-private-snippets-directory "~/.spacemacs.d/layers/private-completion/snippets")
-  
   )
 
 (defun dotspacemacs/user-config ()
@@ -332,15 +322,10 @@ you should place your code here."
   ;; org
   (setq spaceline-org-clock-p t)
 
-  ;; osx extra key bindings
-  (when (spacemacs/system-is-mac)
-    (when (display-graphic-p)
-      ;; Keybindings
-      (global-set-key (kbd "s-d") 'kill-whole-line)
-    )
   )
 
-  )
+(setq custom-file (expand-file-name "custom.el" dotspacemacs-directory))
+(load custom-file 'no-error 'no-message)
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
@@ -352,8 +337,8 @@ you should place your code here."
  '(ansi-color-names-vector
    ["#0a0814" "#f2241f" "#67b11d" "#b1951d" "#4f97d7" "#a31db1" "#28def0" "#b2b2b2"])
  '(package-selected-packages
-  )
-)
+   (quote
+    (reveal-in-osx-finder pbcopy osx-trash osx-dictionary launchctl ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package unfill toc-org spaceline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox org-plus-contrib org-bullets open-junk-file neotree mwim move-text lorem-ipsum linum-relative link-hint indent-guide hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu dumb-jump dracula-theme diminish define-word column-enforce-mode clean-aindent-mode auto-highlight-symbol aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
