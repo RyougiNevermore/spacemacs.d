@@ -50,6 +50,7 @@ values."
                       auto-completion-private-snippets-directory "~/.spacemacs.d/snippets"
                       auto-completion-enable-snippets-in-popup t
                       auto-completion-enable-help-tooltip t)
+      syntax-checking
       (go :variables 
           gofmt-command "goimports"
           go-tab-width 8)
