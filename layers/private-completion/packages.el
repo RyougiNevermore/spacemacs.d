@@ -100,11 +100,7 @@
       (setq yas-snippet-dirs private-completion-private-snippets-directory)
 
       (spacemacs/add-to-hooks 
-<<<<<<< HEAD
-        'private//load-yasnippet
-=======
         'private//load-yasnippet 
->>>>>>> 39158914340e4811492a1d000e14d324d11cb756
         '(prog-mode-hook
           markdown-mode-hook
           org-mode-hook)
@@ -117,11 +113,7 @@
       )
 
       (spacemacs/add-to-hooks
-<<<<<<< HEAD
-        'private//force-yasnippet-off
-=======
         'private//force-yasnippet-off 
->>>>>>> 39158914340e4811492a1d000e14d324d11cb756
         '(term-mode-hook
           shell-mode-hook
           eshell-mode-hook)

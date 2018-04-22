@@ -35,11 +35,7 @@
         (progn
             (setq company-go-show-annotation t)
             ;;(push 'company-go company-backends-go-mode)
-<<<<<<< HEAD
-            (add-hook 'go-mode-hook
-=======
             (add-hook 'go-mode-hook 
->>>>>>> 39158914340e4811492a1d000e14d324d11cb756
                 (lambda ()
                     (cl-pushnew (private//company-backend-with-yas 'company-go) company-backends)
                     (company-mode)

@@ -14,11 +14,7 @@
 
 (defun private//load-gopath-file(gopath name)
     "Search for NAME file in all paths referenced in GOPATH."
-<<<<<<< HEAD
-    (let*
-=======
     (let* 
->>>>>>> 39158914340e4811492a1d000e14d324d11cb756
         (
             (sep (if (spacemacs/system-is-mswindows) ";" ":"))
             (paths (split-string gopath sep))
