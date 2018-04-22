@@ -346,6 +346,10 @@ you should place your code here."
   (setq-default ns-use-srgb-colorspace nil)
   (setq powerline-default-separator 'arrow)
 
+  ;; highlight
+  (spacemacs/toggle-highlight-long-lines-globally-on)
+  (global-highlight-parentheses-mode 1)
+
   ;; snippets dir
   (setq yas-snippet-dirs "~/.spacemacs.d/snippets")
 
