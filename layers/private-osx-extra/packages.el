@@ -22,5 +22,9 @@
     (global-set-key (kbd "s-d") 'kill-whole-line)
     (setq exec-path-from-shell-check-startup-files nil)
     (setq exec-path-from-shell-variables '("PATH" "MANPATH" "PYTHONPATH" "GOPATH"))
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 39158914340e4811492a1d000e14d324d11cb756
 )

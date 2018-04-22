@@ -52,7 +52,11 @@ values."
                       auto-completion-enable-help-tooltip t)
       syntax-checking
       imenu-list
+<<<<<<< HEAD
       (shell :variables
+=======
+      (shell :variables 
+>>>>>>> 39158914340e4811492a1d000e14d324d11cb756
               shell-default-shell "/bin/zsh"
               shell-default-height 30
               shell-default-position 'bottom)
@@ -64,16 +68,27 @@ values."
          org-projectile-file "TODOs.org")
       ;; lang
       emacs-lisp
+<<<<<<< HEAD
       (go :variables
+=======
+      (go :variables 
+>>>>>>> 39158914340e4811492a1d000e14d324d11cb756
           gofmt-command "goimports"
           go-tab-width 8)
       private-go-extra
       html
       yaml
+<<<<<<< HEAD
 
 
 
 
+=======
+     
+     
+     
+     
+>>>>>>> 39158914340e4811492a1d000e14d324d11cb756
     )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -342,7 +357,11 @@ This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
 
+<<<<<<< HEAD
   ;; line
+=======
+  ;; line 
+>>>>>>> 39158914340e4811492a1d000e14d324d11cb756
   (setq-default ns-use-srgb-colorspace nil)
   (setq powerline-default-separator 'arrow)
 
@@ -350,10 +369,17 @@ you should place your code here."
   (spacemacs/toggle-highlight-long-lines-globally-on)
   (global-highlight-parentheses-mode 1)
 
+<<<<<<< HEAD
   ;; snippets dir
   (setq yas-snippet-dirs "~/.spacemacs.d/snippets")
 
   ;; git
+=======
+  ;; snippets dir 
+  (setq yas-snippet-dirs "~/.spacemacs.d/snippets")
+
+  ;; git 
+>>>>>>> 39158914340e4811492a1d000e14d324d11cb756
   (global-git-commit-mode t)
 
   ;; org
