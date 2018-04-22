@@ -1,0 +1,23 @@
+#+TITLE: private-osx-extra layer
+
+# TOC links should be GitHub style anchors.
+* Table of Contents                                        :TOC_4_gh:noexport:
+- [[#description][Description]]
+- [[#install][Install]]
+- [[#key-bindings][Key bindings]]
+
+* Description
+This layer is osx extra :
+  - delete line: kbd "s-d" -> kill-whole-line.
+
+* Install
+To use this configuration layer, add it to your =~/.spacemacs=. You will need to
+add =private-osx-extra= to the existing =dotspacemacs-configuration-layers= list in this
+file.
+
+
+* Key bindings
+
+| Key Binding | Description     |
+|-------------+-----------------|
+| ~super d~   | kill-whole-line |

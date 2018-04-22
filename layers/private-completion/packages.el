@@ -15,10 +15,9 @@
   '(
     company
     (company-quickhelp :toggle private-completion-enable-help-tooltip)
-    fuzzy
     (helm-company :toggle (configuration-layer/package-usedp 'helm))
     yasnippet
-    ;;smartparens
+    smartparens
     hippie-exp
   )
 )
@@ -30,36 +29,25 @@
     :init
     (progn
       (setq company-idle-delay 0.2
+            company-echo-delay 0
             company-minimum-prefix-length 1
+            company-tooltip-limit 12
             company-require-match nil
             company-dabbrev-ignore-case t
-            company-dabbrev-downcase t
+            company-dabbrev-downcase nil
       )
-
-      ;;(add-hook 'company-completion-started-hook 'company-turn-off-fci)
-      ;;(add-hook 'company-completion-finished-hook 'company-maybe-turn-on-fci)
-      ;;(add-hook 'company-completion-cancelled-hook 'company-maybe-turn-on-fci)
+      (add-hook 'after-init-hook #'global-company-mode)
     )
     :config
     (progn
       (spacemacs|diminish company-mode " ⓐ" " a")
+      ;; aligns annotation to the right hand side
+      (setq company-tooltip-align-annotations t)
 
-      ;; key bindings
-      (defun private//company-complete-common-or-cycle-backward ()
-        "Complete common prefix or cycle backward."
-        (interactive)
-        (company-complete-common-or-cycle -1)
-      )
-      (private//private-completion-set-RET-key-behavior 'company)
-      (private//private-completion-set-TAB-key-behavior 'company)
+      ;; (define-key map (kbd "TAB") 'company-complete-common-or-cycle)
+      ;; (define-key map (kbd "<tab>") 'company-complete-common-or-cycle)
 
-      (let ((map company-active-map))
-        (define-key map (kbd "C-d")   'company-show-doc-buffer))
-      (add-hook 'spacemacs-editing-style-hook 'private//company-active-navigation)
-      ;; ensure that the correct bindings are set at startup
-      (private//company-active-navigation dotspacemacs-editing-style)
-
-      (setq company-backends (mapcar #'private//company-backend-with-yas company-backends))
+      ;; (setq company-backends (mapcar #'private//company-backend-with-yas company-backends))
     )
   )
 
@@ -76,17 +64,11 @@
         (define-key company-active-map (kbd "M-h") #'company-quickhelp-manual-begin)
         (unless (eq private-completion-enable-help-tooltip 'manual)
           (company-quickhelp-mode 1)
+          (setq company-quickhelp-delay 0.5)
         )
       )
     )
-    :config
-    (setq company-quickhelp-delay 1)
   )
-)
-
-;; fuzzy
-(defun private-completion/init-fuzzy ()
-  (use-package fuzzy :defer t)
 )
 
 (defun private-completion/init-helm-company ()
@@ -95,7 +77,7 @@
     :defer t
     :init
     (with-eval-after-load 'company
-      (define-key company-active-map (kbd "C-/") 'helm-company)
+      (define-key company-active-map (kbd "s-/") 'helm-company)
     )
   )
 )
@@ -106,23 +88,19 @@
     :commands (yas-global-mode yas-minor-mode)
     :init
     (progn
-      ;; We don't want undefined variable errors
       (defvar yas-global-mode nil)
       (setq yas-triggers-in-field t
             yas-wrap-around-region t)
-      ;; on multiple keys, fall back to completing read
-      ;; typically this means helm
-      (setq yas-prompt-functions '(yas-completing-prompt))
       ;; disable yas minor mode map
       ;; use hippie-expand instead
       (setq yas-minor-mode-map (make-sparse-keymap))
-      ;; this makes it easy to get out of a nested expansion
+
       (define-key yas-minor-mode-map (kbd "M-s-/") 'yas-next-field)
-      ;; configure snippet directories
+
       (setq yas-snippet-dirs private-completion-private-snippets-directory)
 
       (spacemacs/add-to-hooks 
-        'private/load-yasnippet 
+        'private//load-yasnippet 
         '(prog-mode-hook
           markdown-mode-hook
           org-mode-hook)
@@ -135,7 +113,7 @@
       )
 
       (spacemacs/add-to-hooks
-        'private/force-yasnippet-off 
+        'private//force-yasnippet-off 
         '(term-mode-hook
           shell-mode-hook
           eshell-mode-hook)
@@ -143,6 +121,15 @@
     )
     :config 
     (spacemacs|diminish yas-minor-mode " ⓨ" " y")
+  )
+)
+
+(defun private-completion/post-init-smartparens ()
+  (with-eval-after-load 'smartparens
+    (add-hook 'yas-before-expand-snippet-hook
+              #'private//smartparens-disable-before-expand-snippet)
+    (add-hook 'yas-after-exit-snippet-hook
+              #'private//smartparens-restore-after-exit-snippet)
   )
 )
 
@@ -174,10 +161,8 @@
           try-complete-lisp-symbol-partially
           ;; Try to complete word as an Emacs Lisp symbol.
           try-complete-lisp-symbol))
-  ;;(when (configuration-layer/package-usedp 'yasnippet)
+  (when (configuration-layer/package-usedp 'yasnippet)
     ;; Try to expand yasnippet snippets based on prefix
-  ;;  (push 'yas-hippie-try-expand hippie-expand-try-functions-list)
-  ;;)
-)
+    (push 'yas-hippie-try-expand hippie-expand-try-functions-list)))
 
 ;;; packages.el ends here
