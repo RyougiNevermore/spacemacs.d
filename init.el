@@ -58,12 +58,18 @@ values."
               shell-default-position 'bottom)
       ;; vcs
       git
+      ;; doc
+      (org :variables
+         org-want-todo-bindings t
+         org-projectile-file "TODOs.org")
       ;; lang
       emacs-lisp
       (go :variables
           gofmt-command "goimports"
           go-tab-width 8)
       private-go-extra
+      html
+      yaml
 
 
 
